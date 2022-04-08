@@ -6,6 +6,7 @@ import Welcome from '../components/Welcome'
 import Users from '../components/users/Users'
 import Roles from '../components/roles/Roles'
 import Rights from '../components/rights/Rights'
+import Categories from '../components/goods/Categories'
 
 Vue.use(VueRouter)
 
@@ -13,12 +14,12 @@ const routes = [
   // 重定向路由规则
   {
     path: '/',
-    redirect: '/login'
+    redirect: '/login',
   },
   {
     name: 'login',
     path: '/login',
-    component: Login
+    component: Login,
   },
   {
     name: 'home',
@@ -27,33 +28,36 @@ const routes = [
     redirect: '/welcome',
     children: [
       {
-        name:'welcome',
-        path:'/welcome',
-        component: Welcome
+        name: 'welcome',
+        path: '/welcome',
+        component: Welcome,
       },
       {
-        name:'users',
-        path:'/users',
-        component: Users
+        name: 'users',
+        path: '/users',
+        component: Users,
       },
       {
-        name:'roles',
-        path:'/roles',
-        component: Roles
+        name: 'roles',
+        path: '/roles',
+        component: Roles,
       },
       {
-        name:'rights',
-        path:'/rights',
-        component: Rights
+        name: 'rights',
+        path: '/rights',
+        component: Rights,
       },
-      
-
-    ]
-  }
+      {
+        name: 'categories',
+        path: '/categories',
+        component: Categories,
+      },
+    ],
+  },
 ]
 
 const router = new VueRouter({
-  routes
+  routes,
 })
 
 // 挂载路由守卫
